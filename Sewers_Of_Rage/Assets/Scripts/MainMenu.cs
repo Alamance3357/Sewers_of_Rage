@@ -5,67 +5,90 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject startButton;
-    public GameObject settingsButton;
-    public GameObject exitButton; 
-    public GameObject backButton;
-    public GameObject title;
+    public GameObject mainMenu;
+    public GameObject settingMenu;
+    public GameObject gameplayMenu;
+    public GameObject audioMenu;
 
     public void StartButton()
     {
         SceneManager.LoadScene(+1);
     }
 
-    public void SettingsButton()
-    {
-        if (startButton.activeInHierarchy == true)
-        {
-            startButton.SetActive(false);
-        }
-        if (settingsButton.activeInHierarchy == true)
-        {
-            settingsButton.SetActive(false);
-        }
-        if (exitButton.activeInHierarchy == true)
-        {
-            exitButton.SetActive(false);
-        }
-        if (backButton.activeInHierarchy == false)
-        {
-            backButton.SetActive(true);
-        }
-        if (title.activeInHierarchy == true)
-        {
-            title.SetActive(false);
-        }
-    }
-
-    public void BackButton()
-    {
-        if (startButton.activeInHierarchy == false)
-        {
-            startButton.SetActive(true);
-        }
-        if (settingsButton.activeInHierarchy == false)
-        {
-            settingsButton.SetActive(true);
-        }
-        if (exitButton.activeInHierarchy == false)
-        {
-            exitButton.SetActive(true);
-        }
-        if (backButton.activeInHierarchy == true)
-        {
-            backButton.SetActive(false);
-        }
-        if (title.activeInHierarchy == false)
-        {
-            title.SetActive(true);
-        }
-    }
-
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void SettingsBackButton()
+    {
+        if (mainMenu.activeInHierarchy == false)
+        {
+            mainMenu.SetActive(true);
+        }
+        if (settingMenu.activeInHierarchy == true)
+        {
+            settingMenu.SetActive(false);
+        }
+    }
+    
+    public void AudioBackButton()
+    {
+        if (settingMenu.activeInHierarchy == false)
+        {
+            settingMenu.SetActive(true);
+        }
+        if (audioMenu.activeInHierarchy == true)
+        {
+            audioMenu.SetActive(false);
+        }
+    }
+
+    public void GameplayBackButton()
+    {
+        if (settingMenu.activeInHierarchy == false)
+        {
+            settingMenu.SetActive(true);
+        }
+        if (gameplayMenu.activeInHierarchy == true)
+        {
+            gameplayMenu.SetActive(false);
+        }
+    }
+
+    public void SettingsButton()
+    {
+        if (mainMenu.activeInHierarchy == true)
+        {
+            mainMenu.SetActive(false);
+        }
+        if (settingMenu.activeInHierarchy == false)
+        {
+            settingMenu.SetActive(true);
+        }
+    }
+    
+    public void GameplayButton()
+    {
+        if (settingMenu.activeInHierarchy == true)
+        {
+            settingMenu.SetActive(false);
+        }
+        if (gameplayMenu.activeInHierarchy == false)
+        {
+            gameplayMenu.SetActive(true);
+        }
+    }
+
+    public void AudioButton() 
+    {
+        if (settingMenu.activeInHierarchy == true)
+        {
+            settingMenu.SetActive(false);
+        }
+        if (audioMenu.activeInHierarchy == false)
+        {
+            audioMenu.SetActive(true);
+        }
     }
 }
